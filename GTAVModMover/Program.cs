@@ -96,7 +96,7 @@ namespace GTAVModMover {
 					dirs.Add(d);
 				}
 				foreach (DirectoryInfo d in dirs) {
-					if (!((d.Name[0] == 'm' && d.Name[1] == 'p') || d.Name.Contains("patchday"))) {
+					if (!((d.Name[0] == 'm' && d.Name[1] == 'p') || d.Name.Contains("patchday") || d.Name.StartsWith("patch202"))) {
 						if (!Directory.Exists(Path.Combine(backupPath, "update/x64/dlcpacks")))
 							Directory.CreateDirectory(Path.Combine(backupPath, "update/x64/dlcpacks"));
 						ConsolePrint("Moving dlcpacks directory '" + d.Name + "' to moved mods directory.");

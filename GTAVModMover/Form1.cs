@@ -88,7 +88,17 @@ namespace GTAVModMover {
 			whitelist.Add("installscript.vdf");
 			whitelist.Add("PlayGTAV.exe");
 			whitelist.Add("steam_api64.dll");
-			string letters = "abcdefghijklmnopqrstuvwxyz";
+			whitelist.Add("BattlEye");
+			whitelist.Add("fvad.dll");
+			whitelist.Add("GTA5_BE.exe");
+			whitelist.Add("libcurl.dll");
+			whitelist.Add("libtox.dll");
+			whitelist.Add("opus.dll");
+			whitelist.Add("opusenc.dll");
+			whitelist.Add("title.rgl");
+			whitelist.Add("zlib1.dll");
+
+            string letters = "abcdefghijklmnopqrstuvwxyz";
 			for (int i = 0; i < 26; i++) {
 				whitelist.Add("x64" + letters[i] + ".rpf");
 			}
@@ -131,7 +141,7 @@ namespace GTAVModMover {
 					dirs.Add(d);
 				}
 				foreach (DirectoryInfo d in dirs) {
-					if (!((d.Name[0] == 'm' && d.Name[1] == 'p') || d.Name.Contains("patchday"))) {
+					if (!((d.Name[0] == 'm' && d.Name[1] == 'p') || d.Name.Contains("patchday") || d.Name.StartsWith("patch202"))) {
 						detected++;
 					}
 				}
