@@ -109,7 +109,7 @@ namespace GTAVModMover {
 				reloadWindow();
 			}
 
-			checkForUpdates();
+			//checkForUpdates();
 		}
 
 		private int modsDetected() {
@@ -190,24 +190,24 @@ namespace GTAVModMover {
 			}
 		}
 
-		private void checkForUpdates() {
-			using (WebClient client = new WebClient()) {
-				string src = client.DownloadString("https://raw.githubusercontent.com/ckosmic/GTAMoVer/master/GTAVModMover/Properties/AssemblyInfo.cs");
-				string begin = "[assembly: AssemblyVersion(\"";
-				int index = src.IndexOf(begin) + begin.Length;
-				int stop = src.IndexOf("\")]\n[assembly: AssemblyFileVersion(");
-				Version onlineVersion = new Version(src.Substring(index, stop - index));
-				Version version = new Version(Application.ProductVersion);
-				if (onlineVersion > version) {
-					Program.ConsolePrint("A new version (" + onlineVersion + ") is available.");
-					Form2 f2 = new Form2();
-					f2.ShowDialog();
-				} else if (onlineVersion == version) {
-					Program.ConsolePrint("GTAMoVer is up to date.");
-				} else {
-					Program.ConsolePrint("You have a version ahead?!");
-				}
-			}
-		}
+		//private void checkForUpdates() {
+		//	using (WebClient client = new WebClient()) {
+		//		string src = client.DownloadString("https://raw.githubusercontent.com/Elyssy/GTAMoVer/master/GTAVModMover/Properties/AssemblyInfo.cs");
+		//		string begin = "[assembly: AssemblyVersion(\"";
+		//		int index = src.IndexOf(begin) + begin.Length;
+		//		int stop = src.IndexOf("\")]\n[assembly: AssemblyFileVersion(");
+		//		Version onlineVersion = new Version(src.Substring(index, stop - index));
+		//		Version version = new Version(Application.ProductVersion);
+		//		if (onlineVersion > version) {
+		//			Program.ConsolePrint("A new version (" + onlineVersion + ") is available.");
+		//			Form2 f2 = new Form2();
+		//			f2.ShowDialog();
+		//		} else if (onlineVersion == version) {
+		//			Program.ConsolePrint("GTAMoVer is up to date.");
+		//		} else {
+		//			Program.ConsolePrint("You have a version ahead?!");
+		//		}
+		//	}
+		//}
 	}
 }
