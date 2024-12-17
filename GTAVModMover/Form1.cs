@@ -98,7 +98,7 @@ namespace GTAVModMover {
 			whitelist.Add("title.rgl");
 			whitelist.Add("zlib1.dll");
 
-            string letters = "abcdefghijklmnopqrstuvwxyz";
+			string letters = "abcdefghijklmnopqrstuvwxyz";
 			for (int i = 0; i < 26; i++) {
 				whitelist.Add("x64" + letters[i] + ".rpf");
 			}
