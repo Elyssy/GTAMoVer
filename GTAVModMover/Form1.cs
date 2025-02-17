@@ -74,6 +74,7 @@ namespace GTAVModMover {
 			whitelist.Add("GPUPerfAPIDX11-x64.dll");
 			whitelist.Add("NvPmApi.Core.win64.dll");
 			whitelist.Add("version.txt");
+			whitelist.Add("steam_appid.txt");
 			whitelist.Add("bink2w64.dll");
 			whitelist.Add("commandline.txt");
 			whitelist.Add("common.rpf");
